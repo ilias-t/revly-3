@@ -1,0 +1,24 @@
+<h1>TEST!</h1>
+<ion-view title="Feed">  
+  <ion-content>
+    <ion-list>               
+      <ion-item ng-repeat="song in songs" type="item-text-wrap"> 
+        {{song.title}}
+        <span class="badge badge-balanced">{{song.url}}</span>
+      </ion-item>             
+    </ion-list> 
+    <!--  -->
+<!--     <div class="card assertive">                   
+      <div class="item item-text-wrap">
+        Total Spent:
+        <span class="badge badge-positive">{{getTotal()}}</span>
+      </div>               
+    </div>     -->    
+  </ion-content>     
+  <ion-footer-bar>
+    <input ng-model='label' type='text' id='titleInput'
+           placeholder='Song Title...' />
+    <input ng-model='cost' type="text" id="urlInput" placeholder='Song Url...' />
+    <button class="button icon-left ion-plus" ng-click="addSong($event)">Submit</button>
+  </ion-footer-bar>   
+</ion-view>
