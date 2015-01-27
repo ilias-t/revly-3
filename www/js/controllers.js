@@ -8,11 +8,22 @@ angular.module('starter.controllers', [])
   soundCloudAPI = soundCloud.API();
   $scope.searchSoundCloud = function(query) {
     soundCloudAPI.get('/tracks', {q: query, limit: 10}, function(tracks) {
-      tracks.forEach(function(track){
-        $scope.results.push({
-          title: track.title
-        });
-      });
+      $scope.$apply(function(){
+        //Clear the DOM
+        $scope.results = [];
+        //Render the search results
+        $scope.results = $scope.results.concat(tracks);
+        // tracks.forEach(function(track){
+        //   $scope.results.push({
+        //     title: track.title
+        //   });
+        // });
+      })
+      // tracks.forEach(function(track){
+      //   $scope.results.push({
+      //     title: track.title
+      //   });
+      // });
     });
   };
   // $scope.addSound = function(title) {
