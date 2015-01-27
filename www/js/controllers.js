@@ -5,13 +5,11 @@ angular.module('starter.controllers', [])
 })
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
-  $scope.addSong = function(e) {
+  $scope.addSong = function(e, title, url) {
     $scope.songs.$add({
-      track: $scope.track,
-      url: $scope.url
+      title: title,
+      url: url
     });
-    $scope.track = "";
-    $scope.url = "";
   }; 
 })
 ;

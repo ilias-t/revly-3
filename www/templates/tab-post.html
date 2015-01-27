@@ -1,8 +1,12 @@
 <ion-view title="Post">  
   <ion-content>
-  	<input ng-model='track' type='text' id='titleInput'
-           placeholder='Song Track...' />
-    <input ng-model='url' type="text" id="urlInput" placeholder='Song Url...' />
-    <button class="button icon-left ion-plus" ng-click="addSong($event)">Submit</button>
+    <form name="songForm">
+    	<input ng-model='song.title' type='text' id='trackInput'
+             placeholder='Song Title...' /> {{song.title}}
+      <input ng-model='song.url' type="text" id="urlInput"
+             placeholder='Song Url...' /> {{song.url}}
+      <button class="button icon-left ion-plus"
+              ng-click="addSong(event, song.title, song.url)">Submit</button>
+    </form>
   </ion-content>     
 </ion-view>
