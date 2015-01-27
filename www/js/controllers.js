@@ -3,6 +3,11 @@ angular.module('starter.controllers', [])
 .controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
 })
+.controller('SCCtrl', function($scope){
+  $scope.hitSoundCloud = function() {
+    console.log("soundcloud object", SC)
+  };
+})
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e, title, url) {

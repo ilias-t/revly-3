@@ -47,11 +47,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-  .state('tab.post', {
-    url: '/post',
+  .state('tab.post1', {
+    url: '/post1',
     views: {
-      'tab-post': {
-        templateUrl: 'templates/tab-post.html',
+      'tab-post1': {
+        templateUrl: 'templates/tab-post1.html',
+        controller: 'SCCtrl'
+      }
+    }
+  })
+  .state('tab.post2', {
+    url: '/post2',
+    views: {
+      'tab-post2': {
+        templateUrl: 'templates/tab-post2.html',
         controller: 'PostCtrl'
       }
     }
