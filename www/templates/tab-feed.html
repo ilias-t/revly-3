@@ -1,10 +1,5 @@
 <ion-view title="Feed">  
   <ion-content>
-  <input ng-model='title' type='text' id='titleInput'
-           placeholder='Song Title...' />
-    <input ng-model='url' type="text" id="urlInput" placeholder='Song Url...' />
-    <button class="button icon-left ion-plus" ng-click="addSong($event)">Submit</button>
-  <!-- Songs -->
     <ion-list>               
       <ion-item ng-repeat="song in songs" type="item-text-wrap"> 
         {{song.title}}

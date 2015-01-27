@@ -46,6 +46,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'SongsCtrl'
       }
     }
+  })
+  .state('tab.post', {
+    url: '/post',
+    views: {
+      'tab-post': {
+        templateUrl: 'templates/tab-post.html',
+        controller: 'SongsCtrl'
+      }
+    }
   });
 
 
