@@ -2,9 +2,9 @@
   <ion-content>
     <form name="songForm">
     	<input ng-model='song.title' type='text' id='trackInput'
-             placeholder='Song Title...' /> {{song.title}}
+             placeholder='Song Title...' />
       <input ng-model='song.url' type="text" id="urlInput"
-             placeholder='Song Url...' /> {{song.url}}
+             placeholder='Song Url...' />
       <button class="button icon-left ion-plus"
               ng-click="addSong(event, song.title, song.url)">Submit</button>
     </form>
