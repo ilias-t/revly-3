@@ -1,10 +1,9 @@
 angular.module('starter.controllers', [])
-
 // Songs Controller
 .controller('SongsCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e) {
-    $scope.expenses.$add({
+    $scope.songs.$add({
       title: $scope.title,
       url: $scope.url
     });
