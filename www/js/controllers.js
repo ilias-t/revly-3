@@ -1,16 +1,20 @@
 angular.module('starter.controllers', [])
 // Songs Controller
-.controller('SongsCtrl', function($scope, fireBaseData, $firebase) {
+.controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
+  $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
+})
+.controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e) {
     $scope.songs.$add({
-      title: $scope.title,
+      track: $scope.track,
       url: $scope.url
     });
-    $scope.title = "";
+    $scope.track = "";
     $scope.url = "";
   }; 
-});
+})
+;
 
 // .controller('ChatsCtrl', function($scope, Chats) {
 //   $scope.chats = Chats.all();
