@@ -4,12 +4,22 @@ angular.module('starter.controllers', [])
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
 })
 .controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud){
+  $scope.results = [];
   soundCloudAPI = soundCloud.API();
   $scope.searchSoundCloud = function(query) {
-    soundCloudAPI.get('/tracks', { q: query}, function(tracks) {
-      console.log(tracks);
+    soundCloudAPI.get('/tracks', {q: query, limit: 10}, function(tracks) {
+      tracks.forEach(function(track){
+        $scope.results.push({
+          title: track.title
+        });
+      });
     });
   };
+  // $scope.addSound = function(title) {
+  //   $scope.results.push({
+  //     title: title
+  //   });
+  // };
 }])
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
