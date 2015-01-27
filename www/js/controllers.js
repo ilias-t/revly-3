@@ -3,11 +3,14 @@ angular.module('starter.controllers', [])
 .controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
 })
-.controller('SCCtrl', function($scope){
-  $scope.hitSoundCloud = function() {
-    console.log("soundcloud object", SC)
+.controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud){
+  soundCloudAPI = soundCloud.API();
+  $scope.searchSoundCloud = function(query) {
+    soundCloudAPI.get('/tracks', { q: query}, function(tracks) {
+      console.log(tracks);
+    });
   };
-})
+}])
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e, title, url) {
@@ -16,8 +19,7 @@ angular.module('starter.controllers', [])
       url: url
     });
   }; 
-})
-;
+});
 
 // .controller('ChatsCtrl', function($scope, Chats) {
 //   $scope.chats = Chats.all();

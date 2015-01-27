@@ -12,4 +12,14 @@ angular.module('starter.services', [])
         return refSongs;
     }
   }
+})
+//SoundCloud
+.factory('soundCloud', function(){
+  return {
+    API: function() {
+      return SC.initialize({
+        client_id: "4c283a9658da34c8480ab86d30a9ba3e"
+     });
+    }
+  }
 });
