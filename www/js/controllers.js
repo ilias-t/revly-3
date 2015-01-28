@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 // Songs Controller
-.controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
+.controller('FeedCtrl', ["$scope", "fireBaseData", "$firebase", function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
-})
+}])
 .controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud) {
   $scope.results = [];
   soundCloudAPI = soundCloud.API();
@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
     });
   };
 }])
-.controller('PostCtrl', function($scope, fireBaseData, $firebase) {
+.controller('PostCtrl', ["$scope", "fireBaseData", "$firebase", "$stateParams", function($scope, fireBaseData, $firebase, $stateParams) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e, title, url) {
     $scope.songs.$add({
@@ -28,29 +28,4 @@ angular.module('starter.controllers', [])
       url: url
     });
   }; 
-});
-
-// .controller('ChatsCtrl', function($scope, Chats) {
-//   $scope.chats = Chats.all();
-//   $scope.remove = function(chat) {
-//     Chats.remove(chat);
-//   }
-// })
-
-// .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-//   $scope.chat = Chats.get($stateParams.chatId);
-// })
-
-// .controller('FriendsCtrl', function($scope, Friends) {
-//   $scope.friends = Friends.all();
-// })
-
-// .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-//   $scope.friend = Friends.get($stateParams.friendId);
-// })
-
-// .controller('AccountCtrl', function($scope) {
-//   $scope.settings = {
-//     enableFriends: true
-//   };
-// })
+}]);

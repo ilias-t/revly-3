@@ -57,7 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
   .state('tab.post2', {
-    url: '/post2',
+    url: '/post/:song_id',
     views: {
       'tab-post2': {
         templateUrl: 'templates/tab-post2.html',
