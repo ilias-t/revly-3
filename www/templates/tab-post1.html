@@ -5,10 +5,14 @@
             ng-click="searchSoundCloud(searchQuery)">Submit</button>
     <ion-list>               
       <ion-item ng-repeat="result in results" type="item-text-wrap"> 
-        {{result.title}}
+        <div class="list">
+          <a class="item item-thumbnail-left" href="#/tab/post2">
+            <img ng-src="{{result.artwork_url}}">
+            <h2>{{result.title}}</h2>
+            <p>Genre: {{result.genre}}</p>
+          </a>
+        </div>
       </ion-item>             
     </ion-list> 
-
-    <button ng-click="addSound(test)">TEST</button>
   </ion-content>     
 </ion-view>

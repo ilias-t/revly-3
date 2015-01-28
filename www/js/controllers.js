@@ -3,34 +3,22 @@ angular.module('starter.controllers', [])
 .controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
 })
-.controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud){
+.controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud) {
   $scope.results = [];
   soundCloudAPI = soundCloud.API();
+  //Search SoundCloud
   $scope.searchSoundCloud = function(query) {
     soundCloudAPI.get('/tracks', {q: query, limit: 10}, function(tracks) {
-      $scope.$apply(function(){
+      //$scope.$apply 
+      $scope.$apply(function() {
         //Clear the DOM
         $scope.results = [];
-        //Render the search results
+        //Render results
         $scope.results = $scope.results.concat(tracks);
-        // tracks.forEach(function(track){
-        //   $scope.results.push({
-        //     title: track.title
-        //   });
-        // });
+        console.log($scope.results);
       })
-      // tracks.forEach(function(track){
-      //   $scope.results.push({
-      //     title: track.title
-      //   });
-      // });
     });
   };
-  // $scope.addSound = function(title) {
-  //   $scope.results.push({
-  //     title: title
-  //   });
-  // };
 }])
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
