@@ -6,6 +6,7 @@ angular.module('starter.controllers', [])
 .controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud) {
   $scope.results = [];
   soundCloudAPI = soundCloud.API();
+  $scope.consumerKey = "4c283a9658da34c8480ab86d30a9ba3e";
   //Search SoundCloud
   $scope.searchSoundCloud = function(query) {
     soundCloudAPI.get('/tracks', {q: query, limit: 10}, function(tracks) {

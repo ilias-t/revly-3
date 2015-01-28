@@ -9,10 +9,11 @@
     <ion-list>               
       <ion-item ng-repeat="result in results" type="item-text-wrap"> 
         <div class="list">
-          <a class="item item-thumbnail-left" href="#/tab/post2">
+          <a class="item item-thumbnail-left" ng-href="#/tab/post2/{{result.id}}">
             <img ng-src="{{result.artwork_url}}">
             <h2>{{result.title}}</h2>
             <p>Genre: {{result.genre}}</p>
+            <i class="icon ion-music-note assertive"></i>
           </a>
         </div>
       </ion-item>             
