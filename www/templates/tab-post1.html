@@ -1,8 +1,14 @@
 <ion-view title="Search a Song">  
   <ion-content>
-    <input ng-model="searchQuery">
+    <form ng-submit="searchSoundCloud(searchQuery)">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="searchQuery">
+      </label>
+    </form>
+   <!--  <input ng-model="searchQuery">
     <button class="button icon-left ion-plus"
-            ng-click="searchSoundCloud(searchQuery)">Submit</button>
+            ng-click="searchSoundCloud(searchQuery)">Su bmit</button>-->
     <ion-list>               
       <ion-item ng-repeat="result in results" type="item-text-wrap"> 
         <div class="list">
