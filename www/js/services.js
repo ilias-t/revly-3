@@ -13,6 +13,7 @@ angular.module('starter.services', [])
     }
   }
 })
+
 //SoundCloud
 .factory('soundCloud', function(){
   return {

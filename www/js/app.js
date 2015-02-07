@@ -28,34 +28,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   
-  $stateProvider
-  //Routes
-  .state('feed', {
+  $stateProvider.state('feed', {
     url: '/feed',
-    views: {
-      'feed': {
-        templateUrl: 'templates/feed.html',
-        controller: 'FeedCtrl'
-      }
-    }
-  })
-  .state('search', {
+    templateUrl: 'templates/feed.html',
+    controller: 'FeedCtrl'
+  });
+  $stateProvider.state('search', {
     url: '/search',
-    views: {
-      'search': {
-        templateUrl: 'templates/search.html',
-        controller: 'SearchCtrl'
-      }
-    }
-  })
-  .state('post', {
+    templateUrl: 'templates/search.html',
+    controller: 'SearchCtrl'
+  });
+  $stateProvider.state('post', {
     url: '/post',
-    views: {
-      'post': {
-        templateUrl: 'templates/post.html',
-        controller: 'PostCtrl'
-      }
-    }
+    templateUrl: 'templates/post.html',
+    controller: 'PostCtrl'
+  });
+  $stateProvider.state('test', {
+    url: '/test',
+    templateUrl: 'templates/test.html',
+    controller: 'TestCtrl'
   });
 
 
