@@ -1,9 +1,12 @@
 angular.module('starter.controllers', [])
+
 // Songs Controller
 .controller('FeedCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
 })
-.controller('SCCtrl', ["$scope", "soundCloud", function($scope, soundCloud) {
+
+//SoundCloud Controller
+.controller('SearchCtrl', ["$scope", "soundCloud", function($scope, soundCloud) {
   $scope.results = [];
   soundCloudAPI = soundCloud.API();
   //Search SoundCloud
@@ -20,6 +23,8 @@ angular.module('starter.controllers', [])
     });
   };
 }])
+
+//Post Controller
 .controller('PostCtrl', function($scope, fireBaseData, $firebase) {
   $scope.songs = $firebase(fireBaseData.refSongs()).$asArray();
   $scope.addSong = function(e, title, url) {

@@ -27,40 +27,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
+  
   $stateProvider
-
-  // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.feed', {
+  //Routes
+  .state('feed', {
     url: '/feed',
     views: {
-      'tab-feed': {
-        templateUrl: 'templates/tab-feed.html',
+      'feed': {
+        templateUrl: 'templates/feed.html',
         controller: 'FeedCtrl'
       }
     }
   })
-  .state('tab.post1', {
-    url: '/post1',
+  .state('search', {
+    url: '/search',
     views: {
-      'tab-post1': {
-        templateUrl: 'templates/tab-post1.html',
-        controller: 'SCCtrl'
+      'search': {
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
       }
     }
   })
-  .state('tab.post2', {
-    url: '/post2',
+  .state('post', {
+    url: '/post',
     views: {
-      'tab-post2': {
-        templateUrl: 'templates/tab-post2.html',
+      'post': {
+        templateUrl: 'templates/post.html',
         controller: 'PostCtrl'
       }
     }
@@ -68,55 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/feed');
+  $urlRouterProvider.otherwise('/feed');
 
 });
-
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
-  //   .state('tab.chat-detail', {
-  //     url: '/chats/:chatId',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/chat-detail.html',
-  //         controller: 'ChatDetailCtrl'
-  //       }
-  //     }
-  //   })
-
-  // .state('tab.friends', {
-  //     url: '/friends',
-  //     views: {
-  //       'tab-friends': {
-  //         templateUrl: 'templates/tab-friends.html',
-  //         controller: 'FriendsCtrl'
-  //       }
-  //     }
-  //   })
-  //   .state('tab.friend-detail', {
-  //     url: '/friend/:friendId',
-  //     views: {
-  //       'tab-friends': {
-  //         templateUrl: 'templates/friend-detail.html',
-  //         controller: 'FriendDetailCtrl'
-  //       }
-  //     }
-  //   })
-
-  // .state('tab.account', {
-  //   url: '/account',
-  //   views: {
-  //     'tab-account': {
-  //       templateUrl: 'templates/tab-account.html',
-  //       controller: 'AccountCtrl'
-  //     }
-  //   }
-  // })
 
