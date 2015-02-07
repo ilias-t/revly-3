@@ -48,8 +48,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+<<<<<<< HEAD
   .state('post', {
     url: '/post',
+=======
+  .state('tab.post2', {
+    url: '/post/:song_id',
+>>>>>>> 71e5318efa1bb7199ba827e636c69afa85d599e3
     views: {
       'post': {
         templateUrl: 'templates/post.html',
