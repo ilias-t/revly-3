@@ -34,11 +34,4 @@ angular.module('starter.controllers', [])
       url: url
     });
   }; 
-}])
-
-//Test Controller
-.controller('TestCtrl', ["$scope", "$stateParams", function($scope, $stateParams) {
-  $scope.dude = function() {
-    console.log("brahh");
-  };
 }]);
